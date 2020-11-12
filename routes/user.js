@@ -63,7 +63,7 @@ router.post('/update', (req, res) => {
 /* 删除用户 */
 router.post('/delete', (req, res) => {
     model.connect(db => {
-		db.collection('user').remove(req.body, (dbErr, dbRes) => {
+		db.collection('user').remove(req.body, (dbErr, dbRes) => { //uuid不存在，会导致全表被删
             res.send({
 				code: 200,
 				data: {},

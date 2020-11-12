@@ -1,7 +1,6 @@
 var MongoClient = require('mongodb').MongoClient
 
 var url = 'mongodb://localhost:27017'
-var dbname = 'project1'
 
 /*
 	数据库连接方法

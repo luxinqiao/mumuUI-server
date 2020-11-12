@@ -22,7 +22,7 @@
     <body>
         <div id='main'>
             <pre id='user-list'>
-            this.$axios.get(`http://192.168.17.41:3000/user/list`, {
+            this.$axios.get(`http://106.15.63.76:3000/user/list`, {
                 params: {
                     uuid: '1589522165555'
                 }
@@ -32,7 +32,7 @@
             })
             </pre>
             <pre id='user-add'>
-            this.$axios.post(`http://192.168.17.41:3000/user/add`, {
+            this.$axios.post(`http://106.15.63.76:3000/user/add`, {
                 name: '卢信桥',
                 sex: '1',
                 age: '30',
@@ -57,7 +57,7 @@
             })
             </pre>
             <pre id='user-edit'>
-            this.$axios.post(`http://192.168.17.41:3000/user/update`, {
+            this.$axios.post(`http://106.15.63.76:3000/user/update`, {
                 uuid: '1589522130173',
                 name: '小卢',
                 income: '8888'
@@ -67,7 +67,7 @@
             })
             </pre>
             <pre id='user-delete'>
-            this.$axios.post(`http://192.168.17.41:3000/user/delete`, {
+            this.$axios.post(`http://106.15.63.76:3000/user/delete`, {
                 uuid: '1589521161520'
             })
             .then(res => {
