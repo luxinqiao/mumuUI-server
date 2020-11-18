@@ -1,6 +1,6 @@
-var MongoClient = require('mongodb').MongoClient
+const MongoClient = require('mongodb').MongoClient
 
-var url = 'mongodb://localhost:27017'
+const url = 'mongodb://localhost:27017'
 
 /*
 	数据库连接方法
@@ -12,7 +12,7 @@ function connect(callback) {
 		if (err) {
 			console.log('数据库连接错误')
 		} else {
-			var db = client.db()
+			const db = client.db()
 			callback && callback(db)
 			client.close()
 		}

@@ -1,3 +1,7 @@
+/*
+	TODO待实现
+	数据模型实现增删改查
+ */
 const mongoose = require('mongoose')
 mongoose.connect('mongodb://localhost:27017')
 

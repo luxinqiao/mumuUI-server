@@ -1,10 +1,10 @@
-var createError = require('http-errors')
-var express = require('express')
-var path = require('path')
-var cookieParser = require('cookie-parser')
-var logger = require('morgan')
+const createError = require('http-errors')
+const express = require('express')
+const path = require('path')
+const cookieParser = require('cookie-parser')
+const logger = require('morgan')
 
-var app = express()
+const app = express()
 
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
@@ -16,7 +16,7 @@ app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
 
 //支持跨域
-var cors = require('cors')
+let cors = require('cors')
 app.use(cors ({
 	"origin": "*",
 	"methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
@@ -25,8 +25,10 @@ app.use(cors ({
 }))
 
 //创建路由
-app.use('/api', require('./routes/api'))
-app.use('/user', require('./routes/user'))
+const routes =  require('./route')
+for (let i=0; i<routes.length; i++) {
+	app.use(routes[i].path, routes[i].content)
+}
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
